@@ -21,7 +21,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'jurados>',
+    path: 'jurados',
     loadChildren: () =>
       import('./modules/jurados/jurados.module').then((x) => x.JuradosModule),
   },
@@ -33,7 +33,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'proponente-trabajo',
+    path: 'trabajo',
     loadChildren: () =>
       import('./modules/trabajo/trabajo.module').then((x) => x.TrabajoModule),
   },

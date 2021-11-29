@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AreaCreationComponent } from './area-investigation/area-creation/area-creation.component';
 import { AreaEditionComponent } from './area-investigation/area-edition/area-edition.component';
 import { AreaListComponent } from './area-investigation/area-list/area-list.component';
+import { RemoveAreaComponent } from './area-investigation/remove-area/remove-area.component';
 import { JuradosCreationComponent } from './general/jurados-creation/jurados-creation.component';
 import { JuradosEditionComponent } from './general/jurados-edition/jurados-edition.component';
 import { JuradosListComponent } from './general/jurados-list/jurados-list.component';
@@ -38,8 +39,8 @@ const routes: Routes = [
     component: AreaListComponent,
   },
   {
-    path: 'remove-jurados',
-    component: RemoveJuradosComponent,
+    path: 'remove-area',
+    component: RemoveAreaComponent,
   },
 ];
 

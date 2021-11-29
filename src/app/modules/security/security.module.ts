@@ -14,6 +14,7 @@ import { RoleCreationComponent } from './roles/role-creation/role-creation.compo
 import { RoleEditionComponent } from './roles/role-edition/role-edition.component';
 import { RoleListComponent } from './roles/role-list/role-list.component';
 import { RemoveRoleComponent } from './roles/remove-role/remove-role.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,11 @@ import { RemoveRoleComponent } from './roles/remove-role/remove-role.component';
     RoleListComponent,
     RemoveRoleComponent,
   ],
-  imports: [CommonModule, SecurityRoutingModule],
+  imports: [
+    CommonModule,
+    SecurityRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class SecurityModule {}
