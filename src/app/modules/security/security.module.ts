@@ -15,7 +15,6 @@ import { RoleEditionComponent } from './roles/role-edition/role-edition.componen
 import { RoleListComponent } from './roles/role-list/role-list.component';
 import { RemoveRoleComponent } from './roles/remove-role/remove-role.component';
 
-
 @NgModule({
   declarations: [
     LoginComponent,
@@ -29,11 +28,8 @@ import { RemoveRoleComponent } from './roles/remove-role/remove-role.component';
     RoleCreationComponent,
     RoleEditionComponent,
     RoleListComponent,
-    RemoveRoleComponent
+    RemoveRoleComponent,
   ],
-  imports: [
-    CommonModule,
-    SecurityRoutingModule
-  ]
+  imports: [CommonModule, SecurityRoutingModule],
 })
-export class SecurityModule { }
+export class SecurityModule {}
