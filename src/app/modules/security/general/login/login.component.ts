@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
 
+declare const ShowGeneralMessage: any;
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -38,9 +40,9 @@ export class LoginComponent implements OnInit {
 
   Login() {
     if (this.dataForm.invalid) {
-      alert('invalid from');
+      ShowGeneralMessage('invalid from');
     } else {
-      alert('Data Validation');
+      ShowGeneralMessage('Data Validation');
     }
   }
 }
