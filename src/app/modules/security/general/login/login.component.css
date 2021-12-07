@@ -17,7 +17,7 @@ main {
   box-shadow: none;
 }
 
-.errorValidation {
+.errorValidation label {
   color: red;
   font-weight: bold;
 }

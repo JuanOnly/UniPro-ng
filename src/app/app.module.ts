@@ -9,6 +9,7 @@ import { FooterComponent } from './puplic/template/footer/footer.component';
 import { NotFoundComponent } from './puplic/error/not-found/not-found.component';
 import { InternalServerErrorComponent } from './puplic/error/internal-server-error/internal-server-error.component';
 import { HomeComponent } from './puplic/general/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,10 @@ import { HomeComponent } from './puplic/general/home/home.component';
     FooterComponent,
     NotFoundComponent,
     InternalServerErrorComponent,
-    HomeComponent
+    HomeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

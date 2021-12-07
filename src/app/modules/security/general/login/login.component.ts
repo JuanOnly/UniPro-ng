@@ -1,6 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
+import { UserCredentialsModel } from 'src/app/models/user-credentials.model';
+import { SecurityService } from 'src/app/services/shared/security.service';
+import { UserCreationComponent } from '../../users/user-creation/user-creation.component';
+import { MD5 } from 'crypto-js';
+import { SessionDataModel } from 'src/app/models/session-data.model';
+import { LocalStorageService } from 'src/app/services/shared/local-storage.service';
+import { Router } from '@angular/router';
+//import { info } from 'console';
+//var CryptoJS = require('crypto-js');
 
 declare const ShowGeneralMessage: any;
 
@@ -12,7 +21,12 @@ declare const ShowGeneralMessage: any;
 export class LoginComponent implements OnInit {
   dataForm: FormGroup = new FormGroup({});
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private securityService: SecurityService,
+    private localStorageService: LocalStorageService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.Formbuilding();
@@ -21,11 +35,11 @@ export class LoginComponent implements OnInit {
   Formbuilding() {
     this.dataForm = this.fb.group({
       username: [
-        'admin@gmail.com',
+        '',
         [
           Validators.required,
           Validators.email,
-          Validators.minLength(ConfigurationData.EMIAL_MIN_LENGTH),
+          Validators.minLength(ConfigurationData.EMAIL_MIN_LENGTH),
         ],
       ],
       password: [
@@ -40,9 +54,27 @@ export class LoginComponent implements OnInit {
 
   Login() {
     if (this.dataForm.invalid) {
-      ShowGeneralMessage('invalid from');
+      alert(ConfigurationData.INVALID_FORM_MESSAGE);
     } else {
-      ShowGeneralMessage('Data Validation');
+      let credentials = new UserCredentialsModel();
+      credentials.username = this.GetDF['username'].value;
+      credentials.password = MD5(this.GetDF['password'].value).toString();
+
+      this.securityService.Login(credentials).subscribe({
+        next: (data: SessionDataModel) => {
+          console.log(data);
+          let saved = this.localStorageService.SaveSessionData(data);
+          data.isLoggedIn = true;
+          this.securityService.RefreshSessionData(data);
+          this.router.navigate(['/home']);
+        },
+        error: (error: any) => {},
+        complete: () => {},
+      });
     }
+  }
+
+  get GetDF() {
+    return this.dataForm.controls;
   }
 }

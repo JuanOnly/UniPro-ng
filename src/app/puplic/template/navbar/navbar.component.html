@@ -1,437 +1,455 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script>
-      (function ($) {
-        $(function () {
-          $(".dropdown-trigger").dropdown({
-            inDuration: 300,
-            outDuration: 225,
-            hover: true, // Activate on hover
-            belowOrigin: true, // Displays dropdown below the button
-            alignment: "right", // Displays dropdown with edge aligned to the left of button
-          });
-        }); // End Document Ready
-      })(jQuery); // End of jQuery name space
-    </script>
-  </head>
-
-  <!-- Dropdown Structure -->
-  <ul id="dropdown1" class="dropdown-content blue-grey darken-1">
-    <li *ngIf="activeSession">
-      <a routerLink="security/login">Login</a>
-    </li>
-    <li *ngIf="activeSession">
-      <a routerLink="security/logout">Logout</a>
-    </li>
-    <li *ngIf="activeSession">
-      <a routerLink="security/change-password">Change Password</a>
-    </li>
-    <li *ngIf="activeSession">
-      <a routerLink="security/reset-password">Reset Password</a>
-    </li>
-    <li *ngIf="activeSession">
-      <a routerLink="security/role-creation">Role Creation</a>
-    </li>
-    <li *ngIf="activeSession">
-      <a routerLink="security/role-edition">Role Edition</a>
-    </li>
-    <li *ngIf="activeSession">
-      <a routerLink="security/role-list">Role List</a>
-    </li>
-    <li *ngIf="activeSession">
-      <a routerLink="security/remove-role">Remove Role</a>
-    </li>
-    <li *ngIf="activeSession">
-      <a routerLink="security/user-creation">User Creation</a>
-    </li>
-    <li *ngIf="activeSession">
-      <a routerLink="security/user-edition">User Edition</a>
-    </li>
-    <li *ngIf="activeSession">
-      <a routerLink="security/user-list">User List</a>
-    </li>
-    <li *ngIf="activeSession">
-      <a routerLink="security/remove-user">Remove User</a>
-    </li>
-    <li *ngIf="activeSession" class="divider"></li>
-    <li *ngIf="activeSession"><a routerLink="security/logout">Logout</a></li>
-  </ul>
-  <ul id="dropdown2" class="dropdown-content">
-    <li><a routerLink="jurados/area-creation">Area Creation</a></li>
-    <li><a routerLink="jurados/area-edition">Area Edition</a></li>
-    <li><a routerLink="jurados/area-list">Area List</a></li>
-    <li><a routerLink="jurados/remove-area">Remove Area</a></li>
-    <li><a routerLink="jurados/jurados-creation">Jurados Creation</a></li>
-    <li><a routerLink="jurados/jurados-edition">Jurados Edition</a></li>
-    <li><a routerLink="jurados/jurados-list">Jurados List</a></li>
-    <li><a routerLink="jurados/remove-jurados">Remove Jurados</a></li>
-  </ul>
-  <ul id="dropdown3" class="dropdown-content">
-    <li><a routerLink="solicitud/solicitud-creation">Solicitud Creation</a></li>
-    <li><a routerLink="solicitud/solicitud-edition">Solicitud Edition</a></li>
-    <li><a routerLink="solicitud/solicitud-list">Solicitud List</a></li>
-    <li><a routerLink="solicitud/cancel-solicitud">Cancel Solicitud</a></li>
-    <li><a routerLink="solicitud/modalidad-creation">Modalidad Creation</a></li>
-    <li><a routerLink="solicitud/modalidad-edition">Modalidad Edition</a></li>
-    <li><a routerLink="solicitud/modalidad-list">Modalidad List</a></li>
-    <li><a routerLink="solicitud/remove-modalidad">Remove Modalidad</a></li>
-    <li>
-      <a routerLink="solicitud/recordatorios-creation"
+  <head> </head>
+  <nav>
+    <div class="scrollmenu">
+      <a *ngIf="!activeSession" routerLink="security/login">Login</a>
+      <a *ngIf="activeSession" routerLink="security/logout">Logout</a>
+      <a *ngIf="activeSession" routerLink="security/change-password"
+        >Change Password</a
+      >
+      <a *ngIf="activeSession" routerLink="security/reset-password"
+        >Reset Password</a
+      >
+      <a *ngIf="activeSession" routerLink="security/role-creation"
+        >Role Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="security/role-edition"
+        >Role Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="security/role-list">Role List</a>
+      <a *ngIf="activeSession" routerLink="security/remove-role">Remove Role</a>
+      <a *ngIf="activeSession" routerLink="security/user-creation"
+        >User Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="security/user-edition"
+        >User Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="security/user-list">User List</a>
+      <a *ngIf="activeSession" routerLink="security/remove-user">Remove User</a>
+      <a *ngIf="activeSession" routerLink="jurados/area-creation"
+        >Area Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/area-edition"
+        >Area Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/area-list">Area List</a>
+      <a *ngIf="activeSession" routerLink="jurados/remove-area">Remove Area</a>
+      <a *ngIf="activeSession" routerLink="jurados/jurados-creation"
+        >Jurados Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/jurados-edition"
+        >Jurados Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/jurados-list"
+        >Jurados List</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/remove-jurados"
+        >Remove Jurados</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/solicitud-creation"
+        >Solicitud Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/solicitud-edition"
+        >Solicitud Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/solicitud-list"
+        >Solicitud List</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/cancel-solicitud"
+        >Cancel Solicitud</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/modalidad-creation"
+        >Modalidad Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/modalidad-edition"
+        >Modalidad Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/modalidad-list"
+        >Modalidad List</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/remove-modalidad"
+        >Remove Modalidad</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/recordatorios-creation"
         >Recordatorios Creation</a
       >
-    </li>
-    <li>
-      <a routerLink="solicitud/recordatorios-edition">Recordatorios Edition</a>
-    </li>
-    <li><a routerLink="solicitud/recordatorios-list">Recordatorios List</a></li>
-    <li>
-      <a routerLink="solicitud/remove-recordatorios">Remove Recordatorios</a>
-    </li>
-    <li><a routerLink="solicitud/comite-creation">Comite Creation</a></li>
-    <li><a routerLink="solicitud/comite-edition">Comite Edition</a></li>
-    <li><a routerLink="solicitud/comite-list">Comite List</a></li>
-    <li><a routerLink="solicitud/remove-comite">Remove Comite</a></li>
-    <li>
-      <a routerLink="solicitud/tipo-solicitud-creation"
+      <a *ngIf="activeSession" routerLink="solicitud/recordatorios-edition"
+        >Recordatorios Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/recordatorios-list"
+        >Recordatorios List</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/remove-recordatorios"
+        >Remove Recordatorios</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/comite-creation"
+        >Comite Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/comite-edition"
+        >Comite Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/comite-list"
+        >Comite List</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/remove-comite"
+        >Remove Comite</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/tipo-solicitud-creation"
         >Tipo de Solicitud Creation</a
       >
-    </li>
-    <li>
-      <a routerLink="solicitud/tipo-solicitud-edition"
+      <a *ngIf="activeSession" routerLink="solicitud/tipo-solicitud-edition"
         >Tipo de Solicitud Edition</a
       >
-    </li>
-    <li>
-      <a routerLink="solicitud/tipo-solicitud-list">Tipo de Solicitud List</a>
-    </li>
-    <li>
-      <a routerLink="solicitud/remove-tipo-solicitud"
+      <a *ngIf="activeSession" routerLink="solicitud/tipo-solicitud-list"
+        >Tipo de Solicitud List</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/remove-tipo-solicitud"
         >Remove Tipo de Solicitud</a
       >
-    </li>
-  </ul>
-  <ul id="dropdown4" class="dropdown-content">
-    <li>
-      <a routerLink="trabajo/departamento-creation">Departamento Creation</a>
-    </li>
-    <li>
-      <a routerLink="trabajo/departamento-edition">Departamento Edition</a>
-    </li>
-    <li><a routerLink="trabajo/departamento-list">Departamento List</a></li>
-    <li><a routerLink="trabajo/cancel-departamento">Cancel Departamento</a></li>
-    <li><a routerLink="trabajo/facultad-creation">Facultad Creation</a></li>
-    <li><a routerLink="trabajo/facultad-edition">Facultad Edition</a></li>
-    <li><a routerLink="trabajo/facultad-list">Facultad List</a></li>
-    <li><a routerLink="trabajo/remove-facultad">Remove Facultad</a></li>
-    <li><a routerLink="trabajo/trabajo-creation">Trabjo Creation</a></li>
-    <li><a routerLink="trabajo/trabajo-edition">Trabjo Edition</a></li>
-    <li><a routerLink="trabajo/trabajo-list">Trabjo List</a></li>
-    <li><a routerLink="trabajo/cancel-trabajo">Cancel Trabjo</a></li>
-    <li>
-      <a routerLink="trabajo/vinculacion-creation">Vinculacion Creation</a>
-    </li>
-    <li><a routerLink="trabajo/vinculacion-edition">Vinculacion Edition</a></li>
-    <li><a routerLink="trabajo/vinculacion-list">Vinculacion List</a></li>
-    <li><a routerLink="trabajo/remove-vinculacion">Remove Vinculacion</a></li>
-  </ul>
-  <ul id="dropdown5" class="dropdown-content">
-    <li>
-      <a routerLink="evaluacion/evaluacion-creation">Evaluacion Creation</a>
-    </li>
-    <li>
-      <a routerLink="evaluacion/evaluacion-edition">Evaluacion Edition</a>
-    </li>
-    <li><a routerLink="evaluacion/evaluacion-list">Evaluacion List</a></li>
-    <li><a routerLink="evaluacion/cancel-evaluacion">Cancel Evaluacion</a></li>
-    <li><a routerLink="resultado/remove-resultado">Resultado Remove</a></li>
-    <li><a routerLink="resultado/resultado-edition">Resultado Edition</a></li>
-    <li><a routerLink="resultado/resultado-list">Resultado List</a></li>
-    <li><a routerLink="resultado/upload-resultado">Upload Resultado</a></li>
-  </ul>
-
-  <nav>
-    <div class="nav-wrapper blue-grey darken-1">
-      <a routerLink="/home" class="brand-logo">Inicio</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"
-        ><i class="material-icons">menu</i></a
+      <a *ngIf="activeSession" routerLink="trabajo/departamento-creation"
+        >Departamento Creation</a
       >
-      <ul class="right hide-on-med-and-down">
-        <!-- Dropdown Trigger -->
-        <li>
-          <a class="dropdown-trigger" data-target="dropdown5"
-            >Evaluacion<i class="material-icons right">arrow_drop_down</i></a
-          >
-        </li>
-        <li>
-          <a class="dropdown-trigger" data-target="dropdown2"
-            >Jurados<i class="material-icons right">arrow_drop_down</i></a
-          >
-        </li>
-        <li>
-          <a class="dropdown-trigger" data-target="dropdown3"
-            >Solicitud<i class="material-icons right">arrow_drop_down</i></a
-          >
-        </li>
-        <li>
-          <a class="dropdown-trigger" data-target="dropdown4"
-            >Trabajo<i class="material-icons right">arrow_drop_down</i></a
-          >
-        </li>
-        <li>
-          <a class="dropdown-trigger" data-activates="dropdown1"
-            >Security<i class="material-icons right">arrow_drop_down</i></a
-          >
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <nav>
-    <div class="nav-wrapper">
-      <ul id="scrollable" class="right hide-on-med-and-down">
-        <li *ngIf="activeSession">
-          <a routerLink="security/change-password">Change Password</a>
-        </li>
-        <li>
-          <a routerLink="security/reset-password">Reset Password</a>
-        </li>
-        <li *ngIf="activeSession">
-          <a routerLink="security/role-creation">Role Creation</a>
-        </li>
-        <li *ngIf="activeSession">
-          <a routerLink="security/role-edition">Role Edition</a>
-        </li>
-        <li *ngIf="activeSession">
-          <a routerLink="security/role-list">Role List</a>
-        </li>
-        <li *ngIf="activeSession">
-          <a routerLink="security/remove-role">Remove Role</a>
-        </li>
-        <li *ngIf="activeSession">
-          <a routerLink="security/user-creation">User Creation</a>
-        </li>
-        <li *ngIf="activeSession">
-          <a routerLink="security/user-edition">User Edition</a>
-        </li>
-        <li *ngIf="activeSession">
-          <a routerLink="security/user-list">User List</a>
-        </li>
-        <li *ngIf="activeSession">
-          <a routerLink="security/remove-user">Remove User</a>
-        </li>
-        <li *ngIf="activeSession">
-          <a routerLink="security/logout">Logout</a>
-        </li>
-        <li *ngIf="!activeSession">
-          <a routerLink="security/login">Login</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <nav>
-    <div class="nav-wrapper">
-      <ul class="scrollmenu" id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a routerLink="jurados/area-creation">Area Creation</a></li>
-        <li><a routerLink="jurados/area-edition">Area Edition</a></li>
-        <li><a routerLink="jurados/area-list">Area List</a></li>
-        <li><a routerLink="jurados/remove-area">Remove Area</a></li>
-
-        <li><a routerLink="jurados/jurados-creation">Jurados Creation</a></li>
-        <li><a routerLink="jurados/jurados-edition">Jurados Edition</a></li>
-        <li><a routerLink="jurados/jurados-list">Jurados List</a></li>
-        <li><a routerLink="jurados/remove-jurados">Remove Jurados</a></li>
-      </ul>
-    </div>
-  </nav>
-  <nav>
-    <div class="nav-wrapper">
-      <ul class="right hide-on-med-and-down">
-        <li>
-          <a routerLink="solicitud/solicitud-creation">Solicitud Creation</a>
-        </li>
-        <li>
-          <a routerLink="solicitud/solicitud-edition">Solicitud Edition</a>
-        </li>
-        <li><a routerLink="solicitud/solicitud-list">Solicitud List</a></li>
-        <li><a routerLink="solicitud/cancel-solicitud">Cancel Solicitud</a></li>
-        <li>
-          <a routerLink="solicitud/modalidad-creation">Modalidad Creation</a>
-        </li>
-        <li>
-          <a routerLink="solicitud/modalidad-edition">Modalidad Edition</a>
-        </li>
-        <li><a routerLink="solicitud/modalidad-list">Modalidad List</a></li>
-        <li><a routerLink="solicitud/remove-modalidad">Remove Modalidad</a></li>
-        <li>
-          <a routerLink="solicitud/recordatorios-creation"
-            >Recordatorios Creation</a
-          >
-        </li>
-        <li>
-          <a routerLink="solicitud/recordatorios-edition"
-            >Recordatorios Edition</a
-          >
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <nav>
-    <div class="nav-wrapper">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li>
-          <a routerLink="solicitud/recordatorios-list">Recordatorios List</a>
-        </li>
-        <li>
-          <a routerLink="solicitud/remove-recordatorios"
-            >Remove Recordatorios</a
-          >
-        </li>
-        <li><a routerLink="solicitud/comite-creation">Comite Creation</a></li>
-        <li><a routerLink="solicitud/comite-edition">Comite Edition</a></li>
-        <li><a routerLink="solicitud/comite-list">Comite List</a></li>
-        <li><a routerLink="solicitud/remove-comite">Remove Comite</a></li>
-        <li>
-          <a routerLink="solicitud/tipo-solicitud-creation"
-            >Tipo de Solicitud Creation</a
-          >
-        </li>
-        <li>
-          <a routerLink="solicitud/tipo-solicitud-edition"
-            >Tipo de Solicitud Edition</a
-          >
-        </li>
-        <li>
-          <a routerLink="solicitud/tipo-solicitud-list"
-            >Tipo de Solicitud List</a
-          >
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <nav>
-    <div class="nav-wrapper">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li>
-          <a routerLink="solicitud/remove-tipo-solicitud"
-            >Remove Tipo de Solicitud</a
-          >
-        </li>
-        <li>
-          <a routerLink="trabajo/departamento-creation"
-            >Departamento Creation</a
-          >
-        </li>
-        <li>
-          <a routerLink="trabajo/departamento-edition">Departamento Edition</a>
-        </li>
-        <li><a routerLink="trabajo/departamento-list">Departamento List</a></li>
-        <li>
-          <a routerLink="trabajo/remove-departamento">Remove Departamento</a>
-        </li>
-        <li><a routerLink="trabajo/facultad-creation">Facultad Creation</a></li>
-        <li><a routerLink="trabajo/facultad-edition">Facultad Edition</a></li>
-        <li><a routerLink="trabajo/facultad-list">Facultad List</a></li>
-        <li><a routerLink="trabajo/remove-facultad">Remove Facultad</a></li>
-      </ul>
-    </div>
-  </nav>
-  <nav>
-    <div class="nav-wrapper">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a routerLink="trabajo/trabajo-creation">Work Creation</a></li>
-        <li><a routerLink="trabajo/trabajo-edition">Work Edition</a></li>
-        <li><a routerLink="trabajo/trabajo-list">Work List</a></li>
-        <li><a routerLink="trabajo/remove-trabajo">Remove Work</a></li>
-        <li>
-          <a routerLink="trabajo/vinculacion-creation">Vinculacion Creation</a>
-        </li>
-        <li>
-          <a routerLink="trabajo/vinculacion-edition">Vinculacion Edition</a>
-        </li>
-        <li><a routerLink="trabajo/vinculacion-list">Vinculacion List</a></li>
-        <li>
-          <a routerLink="trabajo/remove-vinculacion">Remove Vinculacion</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <!--*ngif="activeSession"-->
-  <ul class="sidenav" id="mobile-demo">
-    <li>
-      <a routerLink="security/login">Login</a>
-    </li>
-    <li><a routerLink="security/logout">Logout</a></li>
-    <li><a routerLink="security/change-password">Change Password</a></li>
-    <li><a routerLink="security/reset-password">Reset Password</a></li>
-    <li><a routerLink="security/role-creation">Role Creation</a></li>
-    <li><a routerLink="security/role-edition">Role Edition</a></li>
-    <li><a routerLink="security/role-list">Role List</a></li>
-    <li><a routerLink="security/remove-role">Remove Role</a></li>
-    <li><a routerLink="security/user-creation">User Creation</a></li>
-    <li><a routerLink="security/user-edition">User Edition</a></li>
-    <li><a routerLink="security/user-list">User List</a></li>
-    <li><a routerLink="security/remove-user">Remove User</a></li>
-    <li><a routerLink="jurados/area-creation">Area Creation</a></li>
-    <li><a routerLink="jurados/area-edition">Area Edition</a></li>
-    <li><a routerLink="jurados/area-list">Area List</a></li>
-    <li><a routerLink="jurados/remove-area">Remove Area</a></li>
-    <li><a routerLink="jurados/jurados-creation">Jurados Creation</a></li>
-    <li><a routerLink="jurados/jurados-edition">Jurados Edition</a></li>
-    <li><a routerLink="jurados/jurados-list">Jurados List</a></li>
-    <li><a routerLink="jurados/remove-jurados">Remove Jurados</a></li>
-    <li><a routerLink="solicitud/solicitud-creation">Solicitud Creation</a></li>
-    <li><a routerLink="solicitud/solicitud-edition">Solicitud Edition</a></li>
-    <li><a routerLink="solicitud/solicitud-list">Solicitud List</a></li>
-    <li><a routerLink="solicitud/cancel-solicitud">Cancel Solicitud</a></li>
-    <li><a routerLink="solicitud/modalidad-creation">Modalidad Creation</a></li>
-    <li><a routerLink="solicitud/modalidad-edition">Modalidad Edition</a></li>
-    <li><a routerLink="solicitud/modalidad-list">Modalidad List</a></li>
-    <li><a routerLink="solicitud/remove-modalidad">Remove Modalidad</a></li>
-    <li>
-      <a routerLink="solicitud/recordatorios-creation"
+      <a *ngIf="activeSession" routerLink="trabajo/departamento-edition"
+        >Departamento Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/departamento-list"
+        >Departamento List</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/cancel-departamento"
+        >Cancel Departamento</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/facultad-creation"
+        >Facultad Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/facultad-edition"
+        >Facultad Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/facultad-list"
+        >Facultad List</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/remove-facultad"
+        >Remove Facultad</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/trabajo-creation"
+        >Trabajo Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/trabajo-edition"
+        >Trabajo Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/trabajo-list"
+        >Trabajo List</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/cancel-trabajo"
+        >Cancel Trabjo</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/vinculacion-creation"
+        >Vinculacion Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/vinculacion-edition"
+        >Vinculacion Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/vinculacion-list"
+        >Vinculacion List</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/remove-vinculacion"
+        >Remove Vinculacion</a
+      >
+      <a *ngIf="activeSession" routerLink="evaluacion/evaluacion-creation"
+        >Evaluacion Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="evaluacion/evaluacion-edition"
+        >Evaluacion Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="evaluacion/evaluacion-list"
+        >Evaluacion List</a
+      >
+      <a *ngIf="activeSession" routerLink="evaluacion/cancel-evaluacion"
+        >Cancel Evaluacion</a
+      >
+      <a *ngIf="activeSession" routerLink="resultado/remove-resultado"
+        >Resultado Remove</a
+      >
+      <a *ngIf="activeSession" routerLink="resultado/resultado-edition"
+        >Resultado Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="resultado/resultado-list"
+        >Resultado List</a
+      >
+      <a *ngIf="activeSession" routerLink="resultado/upload-resultado"
+        >Upload Resultado</a
+      >
+      <a *ngIf="activeSession" routerLink="security/change-password"
+        >Change Password</a
+      >
+      <a *ngIf="activeSession" routerLink="security/reset-password"
+        >Reset Password</a
+      >
+      <a *ngIf="activeSession" routerLink="security/role-creation"
+        >Role Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="security/role-edition"
+        >Role Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="security/role-list">Role List</a>
+      <a *ngIf="activeSession" routerLink="security/remove-role">Remove Role</a>
+      <a *ngIf="activeSession" routerLink="security/user-creation"
+        >User Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="security/user-edition"
+        >User Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="security/user-list">User List</a>
+      <a *ngIf="activeSession" routerLink="security/remove-user">Remove User</a>
+      <a *ngIf="activeSession" routerLink="security/logout">Logout</a>
+      <a *ngIf="activeSession" routerLink="security/login">Login</a>
+      <a *ngIf="activeSession" routerLink="jurados/area-creation"
+        >Area Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/area-edition"
+        >Area Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/area-list">Area List</a>
+      <a *ngIf="activeSession" routerLink="jurados/remove-area">Remove Area</a>
+      <a *ngIf="activeSession" routerLink="jurados/jurados-creation"
+        >Jurados Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/jurados-edition"
+        >Jurados Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/jurados-list"
+        >Jurados List</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/remove-jurados"
+        >Remove Jurados</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/solicitud-creation"
+        >Solicitud Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/solicitud-edition"
+        >Solicitud Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/solicitud-list"
+        >Solicitud List</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/cancel-solicitud"
+        >Cancel Solicitud</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/modalidad-creation"
+        >Modalidad Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/modalidad-edition"
+        >Modalidad Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/modalidad-list"
+        >Modalidad List</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/remove-modalidad"
+        >Remove Modalidad</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/recordatorios-edition"
+        >Recordatorios Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/recordatorios-creation"
         >Recordatorios Creation</a
       >
-    </li>
-    <li>
-      <a routerLink="solicitud/recordatorios-edition">Recordatorios Edition</a>
-    </li>
-    <li><a routerLink="solicitud/recordatorios-list">Recordatorios List</a></li>
-    <li>
-      <a routerLink="solicitud/remove-recordatorios">Cancel Recordatorios</a>
-    </li>
-    <li><a routerLink="solicitud/comite-creation">Comite Creation</a></li>
-    <li><a routerLink="solicitud/comite-edition">Comite Edition</a></li>
-    <li><a routerLink="solicitud/comite-list">Comite List</a></li>
-    <li><a routerLink="solicitud/remove-comite">Remove Comite</a></li>
-    <li>
-      <a routerLink="solicitud/tipo-solicitud-creation"
+      <a *ngIf="activeSession" routerLink="solicitud/recordatorios-list"
+        >Recordatorios List</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/remove-recordatorios"
+        >Remove Recordatorios</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/comite-creation"
+        >Comite Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/comite-edition"
+        >Comite Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/comite-list"
+        >Comite List</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/remove-comite"
+        >Remove Comite</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/tipo-solicitud-creation"
         >Tipo de Solicitud Creation</a
       >
-    </li>
-    <li>
-      <a routerLink="solicitud/tipo-solicitud-edition"
+      <a *ngIf="activeSession" routerLink="solicitud/tipo-solicitud-edition"
         >Tipo de Solicitud Edition</a
       >
-    </li>
-    <li>
-      <a routerLink="solicitud/tipo-solicitud-list">Tipo de Solicitud List</a>
-    </li>
-    <li>
-      <a routerLink="solicitud/remove-tipo-solicitud"
+      <a *ngIf="activeSession" routerLink="solicitud/tipo-solicitud-list"
+        >Tipo de Solicitud List</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/remove-tipo-solicitud"
         >Remove Tipo de Solicitud</a
       >
-    </li>
-    <li><a routerLink="trabajo/trabajo-creation">Trabjo Creation</a></li>
-    <li><a routerLink="trabajo/trabajo-edition">Trabjo Edition</a></li>
-    <li><a routerLink="trabajo/trabajo-list">Trabjo List</a></li>
-    <li><a routerLink="trabajo/cancel-trabajo">Cancel Trabjo</a></li>
-    <li>
-      <a routerLink="trabajo/vinculacion-creation">Vinculacion Creation</a>
-    </li>
-    <li><a routerLink="trabajo/vinculacion-edition">Vinculacion Edition</a></li>
-    <li><a routerLink="trabajo/vinculacion-list">Vinculacion List</a></li>
-    <li><a routerLink="trabajo/remove-vinculacion">Remove Vinculacion</a></li>
-  </ul>
+      <a *ngIf="activeSession" routerLink="trabajo/departamento-creation"
+        >Departamento Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/departamento-edition"
+        >Departamento Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/departamento-list"
+        >Departamento List</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/remove-departamento"
+        >Remove Departamento</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/facultad-creation"
+        >Facultad Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/facultad-edition"
+        >Facultad Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/facultad-list"
+        >Facultad List</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/remove-facultad"
+        >Remove Facultad</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/trabajo-creation"
+        >Work Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/trabajo-edition"
+        >Work Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/trabajo-list">Work List</a>
+      <a *ngIf="activeSession" routerLink="trabajo/remove-trabajo"
+        >Remove Work</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/vinculacion-creation"
+        >Vinculacion Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/vinculacion-edition"
+        >Vinculacion Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/vinculacion-list"
+        >Vinculacion List</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/remove-vinculacion"
+        >Remove Vinculacion</a
+      >
+      <a *ngIf="activeSession" routerLink="security/login">Login</a>
+      <a *ngIf="activeSession" routerLink="security/logout">Logout</a>
+      <a *ngIf="activeSession" routerLink="security/change-password"
+        >Change Password</a
+      >
+      <a *ngIf="activeSession" routerLink="security/reset-password"
+        >Reset Password</a
+      >
+      <a *ngIf="activeSession" routerLink="security/role-creation"
+        >Role Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="security/role-edition"
+        >Role Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="security/role-list">Role List</a>
+      <a *ngIf="activeSession" routerLink="security/remove-role">Remove Role</a>
+      <a *ngIf="activeSession" routerLink="security/user-creation"
+        >User Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="security/user-edition"
+        >User Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="security/user-list">User List</a>
+      <a *ngIf="activeSession" routerLink="security/remove-user">Remove User</a>
+      <a *ngIf="activeSession" routerLink="jurados/area-creation"
+        >Area Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/area-edition"
+        >Area Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/area-list">Area List</a>
+      <a *ngIf="activeSession" routerLink="jurados/remove-area">Remove Area</a>
+      <a *ngIf="activeSession" routerLink="jurados/jurados-creation"
+        >Jurados Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/jurados-edition"
+        >Jurados Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/jurados-list"
+        >Jurados List</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/remove-jurados"
+        >Remove Jurados</a
+      >
+      <a *ngIf="activeSession" routerLink="jurados/remove-jurados"
+        >Remove Jurados</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/solicitud-creation"
+        >Solicitud Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/solicitud-edition"
+        >Solicitud Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/cancel-solicitud"
+        >Cancel Solicitud</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/modalidad-creation"
+        >Modalidad Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/modalidad-edition"
+        >Modalidad Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/remove-modalidad"
+        >Remove Modalidad</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/recordatorios-edition"
+        >Recordatorios Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/recordatorios-list"
+        >Recordatorios List</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/remove-recordatorios"
+        >Cancel Recordatorios</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/comite-creation"
+        >Comite Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/comite-edition"
+        >Comite Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/comite-list"
+        >Comite List</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/remove-comite"
+        >Remove Comite</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/tipo-solicitud-creation"
+        >Tipo de Solicitud Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/tipo-solicitud-edition"
+        >Tipo de Solicitud Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/tipo-solicitud-list"
+        >Tipo de Solicitud List</a
+      >
+      <a *ngIf="activeSession" routerLink="solicitud/remove-tipo-solicitud"
+        >Remove Tipo de Solicitud</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/trabajo-creation"
+        >Trabjo Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/trabajo-edition"
+        >Trabjo Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/trabajo-list">Trabjo List</a>
+      <a *ngIf="activeSession" routerLink="trabajo/cancel-trabajo"
+        >Cancel Trabjo</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/vinculacion-creation"
+        >Vinculacion Creation</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/vinculacion-edition"
+        >Vinculacion Edition</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/vinculacion-list"
+        >Vinculacion List</a
+      >
+      <a *ngIf="activeSession" routerLink="trabajo/remove-vinculacion"
+        >Remove Vinculacion</a
+      >
+    </div>
+  </nav>
+  <!------------------------------------------------------------------------------------------>
 </html>
