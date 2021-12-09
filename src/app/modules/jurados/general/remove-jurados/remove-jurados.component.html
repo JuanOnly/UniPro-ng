@@ -1,1 +1,24 @@
-<p>remove-jurados works!</p>
+<br />
+<div class="row">
+  <input type="hidden" />
+  <div class="row">
+    <div class="input-field col s6">
+      <strong>¿Estas seguro de eliminar el registro?</strong>
+      <br />
+      <ul>
+        <li>id: {{ id }}</li>
+        <li>nombre: {{ nombre_completo }}</li>
+        <li>telefono: {{ telefono }}</li>
+        <li>correo: {{ correo_electronico }}</li>
+        <li>entidad: {{ entidad }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="input-field col s10">
+    <button (click)="RemoveRecord()" class="btn btn-success">Confirmar</button
+    >&nbsp;
+    <a routerLink="/jurados/jurados-list" class="btn btn-warning orange">
+      Cancelar
+    </a>
+  </div>
+</div>

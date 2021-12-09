@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfigurationData } from 'src/app/config/ConfigurationData';
-import { UserCredentialsModel } from 'src/app/models/user-credentials.model';
+import { UserCredentialsModel } from 'src/app/models/security/user-credentials.model';
 import { SecurityService } from 'src/app/services/shared/security.service';
 import { UserCreationComponent } from '../../users/user-creation/user-creation.component';
 import { MD5 } from 'crypto-js';
-import { SessionDataModel } from 'src/app/models/session-data.model';
+import { SessionDataModel } from 'src/app/models/security/session-data.model';
 import { LocalStorageService } from 'src/app/services/shared/local-storage.service';
 import { Router } from '@angular/router';
 //import { info } from 'console';
@@ -63,10 +63,14 @@ export class LoginComponent implements OnInit {
       this.securityService.Login(credentials).subscribe({
         next: (data: SessionDataModel) => {
           console.log(data);
-          let saved = this.localStorageService.SaveSessionData(data);
-          data.isLoggedIn = true;
-          this.securityService.RefreshSessionData(data);
-          this.router.navigate(['/home']);
+          if (data.tk != '' && data.usuario != null) {
+            let saved = this.localStorageService.SaveSessionData(data);
+            data.isLoggedIn = true;
+            this.securityService.RefreshSessionData(data);
+            this.router.navigate(['/home']);
+          } else {
+            alert(ConfigurationData.INVALID_FORM_MESSAGE);
+          }
         },
         error: (error: any) => {},
         complete: () => {},

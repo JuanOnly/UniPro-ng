@@ -1,1 +1,37 @@
-<p>jurados-edition works!</p>
+<br />
+<div class="row">
+  <form [formGroup]="dataForm" class="col s12">
+    <input type="hidden" formControlName="id" />
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="name" id="name" type="text" />
+        <label class="active" for="nombre">Nombre</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="telefono" id="telefono" type="text" />
+        <label class="active" for="telefono">Telefono</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input
+          formControlName="correo_electronico"
+          id="correo_electronico"
+          type="text"
+        />
+        <label class="active" for="correo">Correo</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="entidad" id="entidad" type="text" />
+        <label class="active" for="entidad">Entidad</label>
+      </div>
+    </div>
+    <div class="input-field col s10">
+      <button (click)="SaveRecord()" class="btn btn-success">Guardar</button
+      >&nbsp;
+      <a routerLink="/jurados/jurados-list" class="btn btn-warning orange">
+        Cancelar
+      </a>
+    </div>
+  </form>
+</div>

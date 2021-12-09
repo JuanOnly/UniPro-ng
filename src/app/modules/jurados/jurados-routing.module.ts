@@ -15,7 +15,7 @@ const routes: Routes = [
     component: JuradosCreationComponent,
   },
   {
-    path: 'jurados-edition',
+    path: 'jurados-edition/:id',
     component: JuradosEditionComponent,
   },
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
     component: JuradosListComponent,
   },
   {
-    path: 'remove-jurados',
+    path: 'remove-jurados/:id',
     component: RemoveJuradosComponent,
   },
   {

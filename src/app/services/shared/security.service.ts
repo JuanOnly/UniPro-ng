@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UserCredentialsModel } from '../../models/user-credentials.model';
+import { UserCredentialsModel } from '../../models/security/user-credentials.model';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ConfigurationData } from '../../config/ConfigurationData';
-import { SessionDataModel } from 'src/app/models/session-data.model';
+import { SessionDataModel } from 'src/app/models/security/session-data.model';
 import { LocalStorageService } from './local-storage.service';
 import { ifStmt } from '@angular/compiler/src/output/output_ast';
 
@@ -17,11 +17,13 @@ export class SecurityService {
   constructor(
     private http: HttpClient,
     private localStorageService: LocalStorageService
-  ) {}
+  ) {
+    this.VerifyActiveSession();
+  }
 
   VerifyActiveSession() {
     let info = this.localStorageService.GetSessionData();
-    if (info) {
+    if (info.tk) {
       info.isLoggedIn = true;
       this.RefreshSessionData(info);
       return true;

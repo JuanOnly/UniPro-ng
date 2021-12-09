@@ -10,7 +10,7 @@ import { AreaCreationComponent } from './area-investigation/area-creation/area-c
 import { AreaEditionComponent } from './area-investigation/area-edition/area-edition.component';
 import { AreaListComponent } from './area-investigation/area-list/area-list.component';
 import { RemoveAreaComponent } from './area-investigation/remove-area/remove-area.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,11 +21,13 @@ import { RemoveAreaComponent } from './area-investigation/remove-area/remove-are
     AreaCreationComponent,
     AreaEditionComponent,
     AreaListComponent,
-    RemoveAreaComponent
+    RemoveAreaComponent,
   ],
   imports: [
     CommonModule,
-    JuradosRoutingModule
-  ]
+    JuradosRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
 })
-export class JuradosModule { }
+export class JuradosModule {}
