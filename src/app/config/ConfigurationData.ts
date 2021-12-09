@@ -9,4 +9,5 @@ export namespace ConfigurationData {
   export const UPDATED_MESSAGE = 'Registro Actualizado';
   export const REMOVE_MESSAGE = 'Registro eliminado';
   export const ERROR_MESSAGE = 'Error en el backend';
+  export const PAGE_SIZE = 3;
 }

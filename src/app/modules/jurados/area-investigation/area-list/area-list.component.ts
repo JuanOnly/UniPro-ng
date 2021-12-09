@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigurationData } from 'src/app/config/ConfigurationData';
 import { AreaModel } from 'src/app/models/parameters/area.model';
 import { AreaService } from 'src/app/services/parameters/area.service';
 
@@ -10,7 +11,7 @@ import { AreaService } from 'src/app/services/parameters/area.service';
 export class AreaListComponent implements OnInit {
   recordList: AreaModel[] = [];
   p: number = 1;
-  pageSize: number = 3;
+  pageSize: number = ConfigurationData.PAGE_SIZE;
   totalAmount: number = 0;
 
   constructor(private service: AreaService) {}
