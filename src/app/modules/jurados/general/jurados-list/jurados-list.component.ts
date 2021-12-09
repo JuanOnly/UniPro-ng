@@ -9,7 +9,9 @@ import { JuradosService } from 'src/app/services/parameters/jurados.service';
 })
 export class JuradosListComponent implements OnInit {
   recordList: JuradosModel[] = [];
-
+  p: number = 1;
+  pageSize: number = 3;
+  totalAmount: number = 0;
   constructor(private service: JuradosService) {}
 
   ngOnInit(): void {
@@ -20,6 +22,7 @@ export class JuradosListComponent implements OnInit {
     this.service.GetRecodList().subscribe({
       next: (data: JuradosModel[]) => {
         this.recordList = data;
+        this.totalAmount = this.recordList.length;
       },
     });
   }

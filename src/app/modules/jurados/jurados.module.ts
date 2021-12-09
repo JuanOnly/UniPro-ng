@@ -11,6 +11,7 @@ import { AreaEditionComponent } from './area-investigation/area-edition/area-edi
 import { AreaListComponent } from './area-investigation/area-list/area-list.component';
 import { RemoveAreaComponent } from './area-investigation/remove-area/remove-area.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     JuradosRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    NgxPaginationModule,
   ],
 })
 export class JuradosModule {}

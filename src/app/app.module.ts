@@ -10,6 +10,7 @@ import { NotFoundComponent } from './puplic/error/not-found/not-found.component'
 import { InternalServerErrorComponent } from './puplic/error/internal-server-error/internal-server-error.component';
 import { HomeComponent } from './puplic/general/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,12 @@ import { HttpClientModule } from '@angular/common/http';
     InternalServerErrorComponent,
     HomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgxPaginationModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
