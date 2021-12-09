@@ -31,7 +31,7 @@ const routes: Routes = [
     component: AreaCreationComponent,
   },
   {
-    path: 'area-edition',
+    path: 'area-edition/:id',
     component: AreaEditionComponent,
   },
   {
@@ -39,7 +39,7 @@ const routes: Routes = [
     component: AreaListComponent,
   },
   {
-    path: 'remove-area',
+    path: 'remove-area/:id',
     component: RemoveAreaComponent,
   },
 ];

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { JuradosListComponent } from '../../general/jurados-list/jurados-list.component';
+import { AreaModel } from 'src/app/models/parameters/area.model';
+import { AreaService } from 'src/app/services/parameters/area.service';
 
 @Component({
   selector: 'app-area-list',
@@ -7,9 +8,19 @@ import { JuradosListComponent } from '../../general/jurados-list/jurados-list.co
   styleUrls: ['./area-list.component.css'],
 })
 export class AreaListComponent implements OnInit {
-  //recordList: JuradosListComponent[] = [];
+  recordList: AreaModel[] = [];
 
-  constructor() {}
+  constructor(private service: AreaService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.ShowRecordList();
+  }
+
+  ShowRecordList() {
+    this.service.GetRecodList().subscribe({
+      next: (data: AreaModel[]) => {
+        this.recordList = data;
+      },
+    });
+  }
 }
