@@ -15,6 +15,7 @@ import { RoleEditionComponent } from './roles/role-edition/role-edition.componen
 import { RoleListComponent } from './roles/role-list/role-list.component';
 import { RemoveRoleComponent } from './roles/remove-role/remove-role.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SecurityRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
   ],
 })
 export class SecurityModule {}

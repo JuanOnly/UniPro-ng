@@ -1,1 +1,24 @@
-<p>remove-user works!</p>
+<br />
+<div class="row">
+  <input type="hidden" />
+  <div class="row">
+    <div class="input-field col s6">
+      <strong>¿Estas seguro de eliminar el registro?</strong>
+      <br />
+      <ul>
+        <li>id: {{ id }}</li>
+        <li>nombre: {{ nombre }}</li>
+        <li>celular: {{ celular }}</li>
+        <li>correo: {{ correo }}</li>
+        <li>clave: {{ clave }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="input-field col s10">
+    <button (click)="RemoveRecord()" class="btn btn-success">Confirmar</button
+    >&nbsp;
+    <a routerLink="/security/user-list" class="btn btn-warning orange">
+      Cancelar
+    </a>
+  </div>
+</div>

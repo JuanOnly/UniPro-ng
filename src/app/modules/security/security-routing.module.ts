@@ -35,7 +35,7 @@ const routes: Routes = [
     component: RoleCreationComponent,
   },
   {
-    path: 'role-edition',
+    path: 'role-edition/:id',
     component: RoleEditionComponent,
   },
   {
@@ -43,12 +43,16 @@ const routes: Routes = [
     component: RoleListComponent,
   },
   {
-    path: 'remove-role',
+    path: 'remove-role/:id',
     component: RemoveRoleComponent,
   },
   {
     path: 'user-creation',
     component: UserCreationComponent,
+  },
+  {
+    path: 'user-edition/:id',
+    component: UserEditionComponent,
   },
   {
     path: 'user-edition',
