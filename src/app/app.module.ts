@@ -9,8 +9,9 @@ import { FooterComponent } from './puplic/template/footer/footer.component';
 import { NotFoundComponent } from './puplic/error/not-found/not-found.component';
 import { InternalServerErrorComponent } from './puplic/error/internal-server-error/internal-server-error.component';
 import { HomeComponent } from './puplic/general/home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AddTokenInterceptor } from './interceptors/add-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     NgxPaginationModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AddTokenInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
