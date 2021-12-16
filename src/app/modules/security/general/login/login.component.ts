@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
   }
 
   Login() {
-    if (this.dataForm.invalid) {
+   if (this.dataForm.invalid) {
       alert(ConfigurationData.INVALID_FORM_MESSAGE);
     } else {
       let credentials = new UserCredentialsModel();

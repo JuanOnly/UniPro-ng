@@ -1,1 +1,27 @@
 <p>cancel-evaluacion works!</p>
+<br />
+<div class="row">
+  <input type="hidden" />
+  <div class="row">
+    <div class="input-field col s6">
+      <strong>¿Estas seguro de eliminar la evaluacion?</strong>
+      <br />
+      <ul>
+        <li>id: {{ id }}</li>
+        <li>id_solicitud: {{ id_solicitud }}</li>
+        <li>id_jurado: {{ id_jurado }}</li>
+        <li>fecha_invitacion: {{ fecha_invitacion }}</li>
+        <li>fecha_respuesta: {{ fecha_respuesta }}</li>
+        <li>respuesta: {{ respuesta }}</li>
+        <li>observaciones: {{ observaciones }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="input-field col s10">
+    <button (click)="RemoveRecord()" class="btn btn-success">Confirmar</button
+    >&nbsp;
+    <a routerLink="/evaluacion/evaluacion-list" class="btn btn-warning orange">
+      Cancelar
+    </a>
+  </div>
+</div>

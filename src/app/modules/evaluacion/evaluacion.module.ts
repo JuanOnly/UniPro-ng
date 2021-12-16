@@ -10,6 +10,8 @@ import { ResultadoUploadComponent } from './resultado/resultado-upload/resultado
 import { ResultadoEditionComponent } from './resultado/resultado-edition/resultado-edition.component';
 import { ResultadoListarComponent } from './resultado/resultado-listar/resultado-listar.component';
 import { RemoveResultadoComponent } from './resultado/remove-resultado/remove-resultado.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +27,10 @@ import { RemoveResultadoComponent } from './resultado/remove-resultado/remove-re
   ],
   imports: [
     CommonModule,
-    EvaluacionRoutingModule
+    EvaluacionRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgxPaginationModule,
   ]
 })
 export class EvaluacionModule { }

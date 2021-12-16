@@ -1,1 +1,45 @@
 <p>evaluacion-edition works!</p>
+<br />
+<div class="row">
+  <form [formGroup]="dataForm" class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="id_solicitudn" id="id_solicitud" type="text" />
+        <label for="id_solicitud">id_solicitud</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="id_jurado" id="id_jurado" type="text" />
+        <label for="id_jurado">id_jurado</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="fecha_invitacion" id="fecha_invitacion" type="text" />
+        <label for="fecha_invitacion">fecha_invitacion</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="fecha_respuesta" id="fecha_respuesta" type="text" />
+        <label for="fecha_respuesta">fecha_respuesta</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input
+          formControlName="respuesta"
+          id="respuesta"
+          type="text"
+        />
+        <label for="respuesta">respuesta</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="observaciones" id="observaciones" type="text" />
+        <label for="observaciones">observaciones</label>
+      </div>
+    </div>
+    <div class="input-field col s10">
+      <button (click)="SaveRecord()" class="btn btn-success">Guardar</button
+      >&nbsp;
+      <a routerLink="/evaluacion/evaluacion-list" class="btn btn-warning orange">
+        Cancelar
+      </a>
+    </div>
+  </form>
+</div>
