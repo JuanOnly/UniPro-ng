@@ -22,8 +22,8 @@ export class RoleService {
   GetRecodList(): Observable<RoleModel[]> {
     return this.http.get<RoleModel[]>(`${this.url}/roles`);
   }
-  SearchRecord(id: number): Observable<RoleModel> {
-    return this.http.get<RoleModel>(`${this.url}/roles/${id}`);
+  SearchRecord(_id: number): Observable<RoleModel> {
+    return this.http.get<RoleModel>(`${this.url}/roles/${_id}`);
   }
 
   SaveRecod(data: RoleModel): Observable<RoleModel> {
@@ -46,7 +46,7 @@ export class RoleService {
     console.log(data);
 
     return this.http.put<RoleModel>(
-      `${this.url}/roles/${data.id}`,
+      `${this.url}/roles/${data._id}`,
       {
         nombre: data.nombre,
       },
@@ -58,8 +58,8 @@ export class RoleService {
     );
   }
 
-  RemoveRecord(id: number): Observable<RoleModel> {
-    return this.http.delete<any>(`${this.url}/roles/${id}`, {
+  RemoveRecord(_id: number): Observable<RoleModel> {
+    return this.http.delete<any>(`${this.url}/roles/${_id}`, {
       headers: new HttpHeaders({
         Authorization: `Bearer ${this.tk}`,
       }),

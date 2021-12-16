@@ -24,11 +24,11 @@ export class RemoveRoleComponent implements OnInit {
   }
 
   SearchRecord() {
-    let id = this.route.snapshot.params['id'];
+    let id = this.route.snapshot.params['_id'];
     this.service.SearchRecord(id).subscribe({
       next: (data: RoleModel) => {
-        if (data.id && data.nombre) {
-          this.id = data.id;
+        if (data._id && data.nombre) {
+          this.id = data._id;
           this.nombre = data.nombre;
         }
       },

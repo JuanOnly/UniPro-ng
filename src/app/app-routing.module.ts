@@ -38,7 +38,14 @@ const routes: Routes = [
       import('./modules/trabajo/trabajo.module').then((x) => x.TrabajoModule),
   },
   {
-    path: 'evalucion',
+    path: 'evaluacion',
+    loadChildren: () =>
+      import('./modules/evaluacion/evaluacion.module').then(
+        (x) => x.EvaluacionModule
+      ),
+  },
+  {
+    path: 'resultado',
     loadChildren: () =>
       import('./modules/evaluacion/evaluacion.module').then(
         (x) => x.EvaluacionModule

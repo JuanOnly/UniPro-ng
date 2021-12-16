@@ -27,7 +27,7 @@ const routes: Routes = [
     component: CancelEvaluacionComponent,
   },
   {
-    path: 'resultado-upload',
+    path: 'upload-resultado',
     component: ResultadoUploadComponent,
   },
   {

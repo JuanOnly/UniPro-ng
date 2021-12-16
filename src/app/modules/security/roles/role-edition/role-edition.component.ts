@@ -27,7 +27,7 @@ export class RoleEditionComponent implements OnInit {
 
   Formbuilding() {
     this.dataForm = this.fb.group({
-      id: ['', [Validators.required]],
+      _id: ['', [Validators.required]],
       nombre: ['', [Validators.required]],
     });
   }
@@ -37,10 +37,10 @@ export class RoleEditionComponent implements OnInit {
   }
 
   SearchRecord() {
-    let id = this.route.snapshot.params['id'];
-    this.service.SearchRecord(id).subscribe({
+    let _id = this.route.snapshot.params['_id'];
+    this.service.SearchRecord(_id).subscribe({
       next: (data: RoleModel) => {
-        this.GetDF['id'].setValue(data.id);
+        this.GetDF['_id'].setValue(data._id);
         this.GetDF['nombre'].setValue(data.nombre);
       },
     });
@@ -48,13 +48,13 @@ export class RoleEditionComponent implements OnInit {
 
   SaveRecord() {
     let model = new RoleModel();
-    model.id = this.GetDF['id'].value;
+    model._id = this.GetDF['_id'].value;
     model.nombre = this.GetDF['nombre'].value;
 
     this.service.EditRecord(model).subscribe({
       next: (data: RoleModel) => {
         alert(ConfigurationData.UPDATED_MESSAGE);
-        this.router.navigate(['/jurados/role-list']);
+        this.router.navigate(['/security/role-list']);
       },
     });
   }

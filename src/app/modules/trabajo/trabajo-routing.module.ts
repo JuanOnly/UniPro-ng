@@ -31,7 +31,7 @@ const routes: Routes = [
     component: TrabajoListComponent,
   },
   {
-    path: 'remove-trabajo',
+    path: 'cancel-trabajo',
     component: RemoveTrabajoComponent,
   },
   {
@@ -79,7 +79,7 @@ const routes: Routes = [
     component: DepartamentoListComponent,
   },
   {
-    path: 'remove-departamento',
+    path: 'cancel-departamento',
     component: RemoveDepartamentoComponent,
   },
 ];

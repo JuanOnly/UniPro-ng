@@ -1,4 +1,4 @@
 export class RoleModel {
-  id?: number;
+  _id?: number;
   nombre?: string;
 }
